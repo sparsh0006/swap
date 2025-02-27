@@ -5,6 +5,8 @@ import { motion } from "framer-motion";
 export default function Page() {
   return (
     <div className="bg-background text-foreground">
+
+      <div>sparsh</div>
       
 
       <HeroHighlight>
