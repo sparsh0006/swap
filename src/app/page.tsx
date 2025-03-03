@@ -26,6 +26,10 @@ export default function Page() {
           />
         </div>
         <BackgroundBeams />
+
+        <div>
+          added token fetching functionalities.
+        </div>
       </div>
     );
 }
