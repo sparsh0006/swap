@@ -19,6 +19,10 @@ export default function Page() {
             your token into $USDC instantly for so that merchant get their
             payment in stable coin.
           </p>
+
+          <div>
+            sparsh
+          </div>
           <input
             type="text"
             placeholder="hi@sparshtwt.in"
