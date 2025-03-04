@@ -1,12 +1,75 @@
-import Image from "next/image";
-import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
-import Link from "next/link";
 
 "use client";
+import Image from "next/image";
 import React from "react";
 import { BackgroundBeams } from "@/components/ui/background-beams";
 import { cn } from "@/lib/utils";
 import { Spotlight } from "@/components/ui/spotlight";
+import { FloatingDock } from "@/components/ui/floating-dock";
+import {
+  IconBrandGithub,
+  IconBrandX,
+  IconExchange,
+  IconHome,
+  IconNewSection,
+  IconTerminal2,
+  IconBrandYoutube
+} from "@tabler/icons-react";
+
+ 
+const links = [
+  {
+    title: "Home",
+    icon: (
+      <IconHome className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+    ),
+    href: "#",
+  },
+
+  {
+    title: "Products",
+    icon: (
+      <IconTerminal2 className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+    ),
+    href: "#",
+  },
+  {
+    title: "Components",
+    icon: (
+      <IconNewSection className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+    ),
+    href: "#",
+  },
+  {
+    title: "center",
+    icon: (
+      <IconBrandYoutube className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+    ),
+    href: "#",
+  },
+  {
+    title: "Changelog",
+    icon: (
+      <IconExchange className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+    ),
+    href: "#",
+  },
+
+  {
+    title: "Twitter",
+    icon: (
+      <IconBrandX className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+    ),
+    href: "https://x.com/sparshtwt",
+  },
+  {
+    title: "GitHub",
+    icon: (
+      <IconBrandGithub className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+    ),
+    href: "#",
+  },
+];
 
 export default function Page() {
     return (
@@ -37,9 +100,12 @@ export default function Page() {
         </div>
         <BackgroundBeams />
 
-        <div>
-          added token fetching functionalities.
-        </div>
+        <div className="flex items-center justify-center h-[35rem] w-full">
+      <FloatingDock
+        mobileClassName="translate-y-20" // only for demo, remove for production
+        items={links}
+      />
+    </div>
       </div>
     );
 }
