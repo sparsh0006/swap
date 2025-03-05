@@ -15,6 +15,7 @@ import {
   IconTerminal2,
   IconBrandYoutube
 } from "@tabler/icons-react";
+import WalletConnectButton from "@/components/ui/WalletConnectButton";
 
  
 const links = [
@@ -92,6 +93,12 @@ export default function Page() {
           <div>
             sparsh
           </div>
+
+          <div className="flex justify-center mt-6">
+            <WalletConnectButton />
+          </div>
+
+
           <input
             type="text"
             placeholder="hi@sparshtwt.in"
