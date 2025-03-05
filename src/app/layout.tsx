@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import { Web3Provider } from "../lib/web3"; // Import the Web3Provider
+// Import the Web3Provider
+import { Web3Provider } from "@/lib/web3"; // Remove the extra semicolon
+import WalletConnectButton from "@/components/ui/WalletConnectButton";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -29,9 +31,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Web3Provider>
+        <Web3Provider> {/* Use uppercase W and P */}
+          <WalletConnectButton /> 
           {children}
-        </Web3Provider>
+        </Web3Provider> {/* Use proper closing tag, not self-closing */}
       </body>
     </html>
   );

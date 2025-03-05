@@ -81,6 +81,7 @@ export const SolanaWalletProvider = ({ children }: { children: ReactNode }) => {
     };
   }, []);
 
+  // The explicit return type helps TypeScript understand this is a valid JSX component
   return (
     <SolanaWalletContext.Provider value={{
       publicKey,
@@ -100,3 +101,11 @@ export const useSolanaWallet = () => {
   }
   return context;
 };
+
+// Define the Web3Provider with explicit JSX Element return type
+import { JSX } from 'react';
+export const Web3Provider = ({ children }: { children: ReactNode }): JSX.Element => {
+  return <SolanaWalletProvider>{children}</SolanaWalletProvider>;
+};
+
+export const useWeb3 = useSolanaWallet;
