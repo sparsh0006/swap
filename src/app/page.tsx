@@ -104,7 +104,11 @@ export default function Page() {
             <SolanaWalletButton />
           </div>
 
+
           <div className="flex justify-center mt-6">
+
+              your button will be placed here.
+
           </div>
 
           <input
