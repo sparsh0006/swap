@@ -1,4 +1,3 @@
-
 "use client";
 import Image from "next/image";
 import React from "react";
@@ -6,6 +5,7 @@ import { BackgroundBeams } from "@/components/ui/background-beams";
 import { cn } from "@/lib/utils";
 import { Spotlight } from "@/components/ui/spotlight";
 import { FloatingDock } from "@/components/ui/floating-dock";
+import dynamic from "next/dynamic";
 import {
   IconBrandGithub,
   IconBrandX,
@@ -13,10 +13,15 @@ import {
   IconHome,
   IconNewSection,
   IconTerminal2,
-  IconBrandYoutube
+  IconBrandYoutube,
+  IconWallet
 } from "@tabler/icons-react";
-import WalletConnectButton from "@/components/ui/WalletConnectButton";
 
+// Dynamically import the wallet button with SSR disabled
+const SolanaWalletButton = dynamic(
+  () => import('@/components/ui/wallet/SolanaWalletButton'),  // import the SolanaWalletButton component
+  { ssr: false }
+);
  
 const links = [
   {
@@ -26,7 +31,6 @@ const links = [
     ),
     href: "#",
   },
-
   {
     title: "Products",
     icon: (
@@ -55,7 +59,6 @@ const links = [
     ),
     href: "#",
   },
-
   {
     title: "Twitter",
     icon: (
@@ -69,6 +72,13 @@ const links = [
       <IconBrandGithub className="h-full w-full text-neutral-500 dark:text-neutral-300" />
     ),
     href: "#",
+  },
+  {
+    title: "Wallet",
+    icon: (
+      <IconWallet className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+    ),
+    href: "#wallet",
   },
 ];
 
@@ -90,14 +100,12 @@ export default function Page() {
             payment in stable coin.
           </p>
 
-          <div>
-            sparsh
+          <div className="relative z-10 flex items-center justify-center mt-4">
+            <SolanaWalletButton />
           </div>
 
           <div className="flex justify-center mt-6">
-            <WalletConnectButton />
           </div>
-
 
           <input
             type="text"
@@ -108,12 +116,11 @@ export default function Page() {
         <BackgroundBeams />
 
         <div className="flex items-center justify-center h-[35rem] w-full">
-      <FloatingDock
-        mobileClassName="translate-y-20" // only for demo, remove for production
-        items={links}
-      />
-    </div>
+          <FloatingDock
+            mobileClassName="translate-y-20" // only for demo, remove for production
+            items={links}
+          />
+        </div>
       </div>
     );
 }
-
