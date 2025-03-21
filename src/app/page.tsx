@@ -23,7 +23,7 @@ export default function Home() {
             Connect Wallet
           </h2>
           <p className="m-0 max-w-[30ch] text-sm opacity-80">
-            Connect your Solana wallet to get started with swapping tokens.kuch bhi
+            Connect your Solana wallet to get started with swapping tokens.  kuch bhi : updated UI
           </p>
         </div>
 
