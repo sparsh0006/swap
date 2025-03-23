@@ -46,7 +46,7 @@ export const TransactionStatus: FC<TransactionStatusProps> = ({ txId, status, er
             rel="noopener noreferrer" 
             className="tx-link"
           >
-            View on SolScan
+            View on txn. on SolScan
           </a>
         </p>
       </div>
